@@ -18,15 +18,18 @@ async function fetchCovidData() {
 
     // Preparing date to be showed
     let date = new Date(rec.datetime)
+    let hours = ((date.getHours() + 3) < 10 ? "0" + (date.getHours() + 3) : date.getHours() + 3); // Adjust for Sao Paulo timezone
+    let minutes = (date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes());
     let day = (date.getDate() < 10 ? "0" + date.getDate() : date.getDate());
     let month = ((date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1);
     let year = date.getFullYear();
 
     // Data presentation
-    document.getElementById("date").innerHTML = day + "/" + month + "/" + year;
+    document.getElementById("date").innerHTML = day + "/" + month + "/" + year + "<br>" + hours + "h " + minutes + "min"; 
     document.getElementById("cases").innerHTML = formatNumber(rec.cases);
     document.getElementById("deaths").innerHTML = formatNumber(rec.deaths);
     document.getElementById("suspects").innerHTML = formatNumber(rec.suspects);
+    document.getElementById("refuses").innerHTML = formatNumber(rec.refuses);
 
 }
 
