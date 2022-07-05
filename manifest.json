@@ -1,0 +1,11 @@
+{
+    "name": "Covid-19 in SP Brazil",
+    "version": "1.0.0",
+    "description": "Latest covid data for Sao Paulo state, Brazil",
+    "manifest_version": 3,
+    "author": "Ubirajara Neves",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Latest Covid Report"
+    }
+}
